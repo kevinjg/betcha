@@ -9,6 +9,8 @@ import { AuthService } from './shared/auth.service';
 import { ChallengeComponent } from './challenge/challenge.component';
 import { ToastModule, ToastOptions } from 'ng2-toastr/ng2-toastr';
 
+import { BetsService } from './bets/bets.service';
+
 let options = <ToastOptions>{
   positionClass: 'toast-bottom-right',
 };
@@ -28,6 +30,7 @@ let options = <ToastOptions>{
   bootstrap: [AppComponent],
   providers: [
     AuthService,
+    BetsService,
     {
       provide: Window,
       useValue: window

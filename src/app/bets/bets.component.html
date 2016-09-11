@@ -1,0 +1,8 @@
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let bet of bets" (click)="onSelect(game)">
+      <!--{{ game.home }} vs {{ game.away }}-->
+      {{ bet.condition }}
+      <!--{{ bet.terms }}-->
+      {{ bet.opponent }}
+    </li>
+  </ul>

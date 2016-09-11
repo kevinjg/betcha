@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { NgForm } from '@angular/forms';
+
+import { BetsService } from '../bets/bets.service';
 
 declare var $: any;
 
@@ -8,7 +11,7 @@ declare var $: any;
   template: require('./challenge.component.html')
 })
 export class ChallengeComponent {
-  constructor(private toastr: ToastsManager) { }
+  constructor(private toastr: ToastsManager, private betsService: BetsService) { }
 
   // ngOnInit() { }
 
@@ -16,12 +19,28 @@ export class ChallengeComponent {
     this.toastr.success('Challenge sent!', 'Success!');
   }
 
-  sendChallenge() {
+  sendChallenge(data) {
     // console.log('hello');
     $('#myModal').modal('hide');
-    setTimeout(() => {
-      this.showSuccess();
-    }, 1500);
+
+    // this.betsService.createBet()
+    // setTimeout(() => {
+    //   this.showSuccess();
+    // }, 1500);
+
     // SEND TO GAME
+  }
+
+  onSubmit(form: NgForm) {
+    form.value.email = 'jkevin.garcia@gmail.com';
+    this.betsService.createBet(form.value)
+      .subscribe(() => {
+        $('#myModal').modal('hide');
+        this.showSuccess();
+        // this.router.navigate(['/apps']);
+      },
+      (err) => {
+        console.log(err);
+      });
   }
 }

@@ -38,8 +38,8 @@ export class GamesService {
     return this.http.get(this.gamesUrl + '/' + id + '/clock')
       .map((data) => {
         // console.log(data);
-        console.dir(data.json());
-        return data.json().data;
+        // console.dir(data.json());
+        return data.json();
       });
   }
   // getGame(id: any) {

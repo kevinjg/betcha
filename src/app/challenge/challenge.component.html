@@ -7,23 +7,29 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">I betcha...</h4>
       </div>
-      <div class="modal-body">
-        <form>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="modal-body">
           <div class="form-group">
-            <label for="conditions">Conditions</label>
-            <textarea class="form-control" id="conditions" rows="3" placeholder="Russell Wilson will rush for more yards than the Dolphins..."></textarea>
+            <label for="condition">Conditions</label>
+            <textarea [(ngModel)]="f.condition" name="condition" class="form-control" id="conditions" rows="3" placeholder="Russell Wilson will rush for more yards than the Dolphins..."></textarea>
           </div>
 
           <div class="form-group">
             <label for="terms">Terms</label>
-            <textarea class="form-control" id="terms" rows="3" placeholder="Non-winner has to wash the dishes for the week..."></textarea>
+            <textarea [(ngModel)]="f.terms" name="terms" class="form-control" id="terms" rows="3" placeholder="Non-winner has to wash the dishes for the week..."></textarea>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="sendChallenge()">CHALLENGE</button>
-      </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Opponent</label>
+            <input [(ngModel)]="f.opponentEmail" name="opponentEmail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">CHALLENGE</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

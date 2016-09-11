@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'games',
     loadChildren: () => System.import('./games/games.module').then(({GamesModule}) => GamesModule)
+  },
+    {
+    path: 'bets',
+    loadChildren: () => System.import('./bets/bets.module').then(({BetsModule}) => BetsModule)
   }
 ]
 

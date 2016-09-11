@@ -27,7 +27,7 @@ export class GamesListComponent implements OnInit {
 
   ngOnInit() {
     this.getGames();
-    this.getCompletedGames();
+    // this.getCompletedGames();
   }
 
   getGames() {
