@@ -1,5 +1,5 @@
 <div class="current-games">
-  <h3>Current NCAAF Games</h3>
+  <h3>Current NFL Games</h3>
   <!--<a routerLink="/apps/create">Create an App</a>-->
   <li class="games" *ngFor="let game of games" (click)="onSelect(game)">
     <span>{{ game.home }} vs {{ game.away }}</span>
@@ -7,7 +7,7 @@
 </div>
 
 <div class="completed-games">
-  <h3>Completed NCAAF Games</h3>
+  <h3>Completed NFL Games</h3>
   <li class="games" *ngFor="let game of completedGames" (click)="onSelect(game)">
     <span>{{ game.home }} vs {{ game.away }}</span>
   </li>

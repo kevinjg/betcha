@@ -5,7 +5,18 @@ import { Subscription } from 'rxjs/Subscription';
 import { GamesService } from '../shared/games.service';
 
 @Component({
-  template: require('./game-detail.component.html')
+  template: require('./game-detail.component.html'),
+  styles: [
+    `
+      .score {
+        margin-bottom: 16px;
+      }
+
+      .time {
+        margin-bottom: 32px;
+      }
+    `
+  ]
 })
 export class GameDetailComponent implements OnInit, OnDestroy {
   private game;

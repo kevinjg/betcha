@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class GamesService {
-  private gamesUrl = 'http://localhost:3000/api/ncaa/fb/games';
+  private gamesUrl = 'http://localhost:3000/api/nfl/fb/games';
   // private detailsUrl = 'http://localhost:3000/ap'
 
   constructor(private http: Http) { }

@@ -38,7 +38,10 @@ export class GamesListComponent implements OnInit {
 
   getCompletedGames() {
     this.gamesService.getCompletedGames()
-      .subscribe(games => this.completedGames = games);
+      .subscribe(games => {
+        console.dir(games);
+        this.completedGames = games;
+      });
   }
 
   onSelect(game: any) {

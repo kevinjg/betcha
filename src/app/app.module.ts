@@ -1,30 +1,38 @@
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { CoreModule } from './core/core.module';
 import { AuthService } from './shared/auth.service';
+import { ChallengeComponent } from './challenge/challenge.component';
+// import { ToastModule, ToastOptions } from 'ng2-toastr/ng2-toastr';
+
+// let options = <ToastOptions>{
+//   positionClass: 'toast-bottom-right',
+// };
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    // ToastModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    ChallengeComponent
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, ChallengeComponent],
   providers: [
     AuthService,
     {
       provide: Window,
       useValue: window
-    }
+    },
+    // { provide: ToastOptions, useValue: options }
   ]
 })
 export class AppModule { }

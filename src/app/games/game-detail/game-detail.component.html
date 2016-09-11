@@ -1,16 +1,20 @@
-<div *ngIf="game">
+<div *ngIf="game" class="score">
   <!--<div class="row">-->
   <h1>{{ game.away_team.market }} {{ game.away_team.name }} {{ game.away_team.points }}</h1>
   <h1>{{ game.home_team.market }} {{ game.home_team.name }} {{ game.home_team.points }}</h1>
   <!--</div>-->
 </div>
-<div *ngIf="gametime">
-  <h3>Time left: {{ gametime.clockValue }}</h3>
-  <h3>Quarter: {{ gametime.quarterValue }}</h3>
-</div>
-<div *ngIf="final">
-  <h3>FINAL</h3>
-</div>
-<div *ngIf="halftime">
-  <h3>HALFTIME</h3>
+<div class="time">
+  <div *ngIf="gametime">
+    <h4>Time Left: {{ gametime.clockValue }}</h4>
+    <h4>Quarter: {{ gametime.quarterValue }}</h4>
+  </div>
+
+  <div *ngIf="final">
+    <h4>FINAL</h4>
+  </div>
+
+  <div *ngIf="halftime">
+    <h4>HALFTIME</h4>
+  </div>
 </div>
