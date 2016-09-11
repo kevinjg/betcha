@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { NgForm } from '@angular/forms';
 
+import { AuthService } from '../shared/auth.service';
 import { BetsService } from '../bets/bets.service';
 
 declare var $: any;
@@ -11,7 +12,7 @@ declare var $: any;
   template: require('./challenge.component.html')
 })
 export class ChallengeComponent {
-  constructor(private toastr: ToastsManager, private betsService: BetsService) { }
+  constructor(private auth: AuthService, private toastr: ToastsManager, private betsService: BetsService) { }
 
   // ngOnInit() { }
 
@@ -32,7 +33,9 @@ export class ChallengeComponent {
   }
 
   onSubmit(form: NgForm) {
-    form.value.email = 'jkevin.garcia@gmail.com';
+    console.dir(this.auth.userProfile);
+    form.value.email = this.auth.userProfile.email;
+    console.log(form.value.email);
     this.betsService.createBet(form.value)
       .subscribe(() => {
         $('#myModal').modal('hide');

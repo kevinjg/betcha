@@ -10,7 +10,7 @@ export class AuthService {
   // Configure Auth0
   lock = new Auth0Lock('teVWrxYMjVwkM23xkQY6S8ylNjcU2iyT', 'cpjkhackathon.auth0.com', {});
 
-  userProfile: Object;
+  userProfile: any;
 
   constructor() {
     this.userProfile = JSON.parse(localStorage.getItem('profile'));

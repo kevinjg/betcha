@@ -17,6 +17,7 @@ export class BetsService {
 
     return this.http.post('http://localhost:3000/bet', body, options)
       .map((data) => {
+        console.dir(data.json().meta);
         return data;
       });
   }

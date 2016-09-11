@@ -1,7 +1,7 @@
 <div class="container">
   <nav class="navbar navbar-light bg-faded">
     <a class="navbar-brand" routerLink="/games">Betcha</a>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav" *ngIf="auth.authenticated()">
       <li class="nav-item">
         <span class="nav-link" data-toggle="modal" data-target="#myModal">CHALLENGE</span>
       </li>

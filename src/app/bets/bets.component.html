@@ -1,8 +1,32 @@
-  <ul class="list-group">
-    <li class="list-group-item list-group-item-action" *ngFor="let bet of bets" (click)="onSelect(game)">
-      <!--{{ game.home }} vs {{ game.away }}-->
-      {{ bet.condition }}
-      <!--{{ bet.terms }}-->
-      {{ bet.opponent }}
-    </li>
-  </ul>
+<h3>Your Bets</h3>
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success" *ngFor="let bet of bets" (click)="getBetDetail(bet)" data-toggle="modal"
+    data-target="#followup">
+    {{ bet.condition }} || {{ bet.opponent }}
+  </li>
+  <!--<span class="nav-link" data-toggle="modal" data-target="#myModal">CHALLENGE</span>-->
+
+</ul>
+<div class="modal fade" id="followup" tabindex="-1" role="dialog" aria-labelledby="followupLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!--<h4 class="modal-title" id="myModalLabel">I betcha...</h4>-->
+      </div>
+      <!--<form (ngSubmit)="onSubmit(f)" #f="ngForm">-->
+      <div class="modal-body">
+        <p>Did {{ opponent }} follow through?</p>
+        <blockquote class="blockquote">{{ terms }}</blockquote>
+        <label class="form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> No
+</label>
+        <label class="form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Yes
+</label>
+      </div>
+    </div>
+  </div>
+</div>

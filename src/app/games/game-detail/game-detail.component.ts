@@ -48,7 +48,11 @@ export class GameDetailComponent implements OnInit, OnDestroy {
       .subscribe(game => {
         this.game = game;
 
-        if (this.game.home_team.name === 'Broncos') {
+        if (this.game.home_team.name === 'Lions') {
+          this.game.homeLogoUrl = 'detroitlions';
+        } else if (this.game.home_team.name === 'Cowboys') {
+          this.game.homeLogoUrl = 'dallascowboys';
+        } else if (this.game.home_team.name === 'Broncos') {
           this.game.homeLogoUrl = 'denverbroncos';
         } else if (this.game.home_team.name === 'Saints') {
           this.game.homeLogoUrl = 'neworleanssaints';
@@ -62,7 +66,11 @@ export class GameDetailComponent implements OnInit, OnDestroy {
           this.game.homeLogoUrl = game.home_team.name.toLowerCase();
         }
 
-        if (this.game.away_team.name === 'Broncos') {
+        if (this.game.away_team.name === 'Lions') {
+          this.game.awayLogoUrl = 'detroitlions';
+        } else if (this.game.away_team.name === 'Cowboys') {
+          this.game.awayLogoUrl = 'dallascowboys';
+        } else if (this.game.away_team.name === 'Broncos') {
           this.game.awayLogoUrl = 'denverbroncos';
         } else if (this.game.away_team.name === 'Saints') {
           this.game.awayLogoUrl = 'neworleanssaints';
