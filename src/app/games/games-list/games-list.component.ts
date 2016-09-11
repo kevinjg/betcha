@@ -9,7 +9,7 @@ import { GamesService } from '../shared/games.service';
   template: require('./games-list.component.html'),
   styles: [
     `
-      .games span {
+      .games {
         cursor: pointer;
       }
 

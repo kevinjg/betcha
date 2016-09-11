@@ -13,9 +13,6 @@ export class AppComponent {
     // this.showSuccess();
   }
 
-  test() {
-    console.log(this.auth.authenticated());
-  }
   // showSuccess() {
   //   this.toastr.success('Challenge sent!', 'Success!');
   // }

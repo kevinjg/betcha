@@ -7,11 +7,11 @@ import { AppRoutingModule } from './app.routing';
 import { CoreModule } from './core/core.module';
 import { AuthService } from './shared/auth.service';
 import { ChallengeComponent } from './challenge/challenge.component';
-// import { ToastModule, ToastOptions } from 'ng2-toastr/ng2-toastr';
+import { ToastModule, ToastOptions } from 'ng2-toastr/ng2-toastr';
 
-// let options = <ToastOptions>{
-//   positionClass: 'toast-bottom-right',
-// };
+let options = <ToastOptions>{
+  positionClass: 'toast-bottom-right',
+};
 
 @NgModule({
   imports: [
@@ -19,20 +19,20 @@ import { ChallengeComponent } from './challenge/challenge.component';
     HttpModule,
     AppRoutingModule,
     CoreModule,
-    // ToastModule
+    ToastModule
   ],
   declarations: [
     AppComponent,
     ChallengeComponent
   ],
-  bootstrap: [AppComponent, ChallengeComponent],
+  bootstrap: [AppComponent],
   providers: [
     AuthService,
     {
       provide: Window,
       useValue: window
     },
-    // { provide: ToastOptions, useValue: options }
+    { provide: ToastOptions, useValue: options }
   ]
 })
 export class AppModule { }
