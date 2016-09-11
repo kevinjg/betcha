@@ -6,7 +6,18 @@ import { Router } from '@angular/router';
 import { GamesService } from '../shared/games.service';
 
 @Component({
-  template: require('./games-list.component.html')
+  template: require('./games-list.component.html'),
+  styles: [
+    `
+      .games span {
+        cursor: pointer;
+      }
+
+      .completed-games, .current-games {
+        margin-bottom: 16px;
+      }
+    `
+  ]
 })
 export class GamesListComponent implements OnInit {
   private games;

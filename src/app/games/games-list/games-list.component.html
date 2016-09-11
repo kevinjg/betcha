@@ -1,11 +1,14 @@
-<h3>Current NCAAF Games</h3>
-<!--<a routerLink="/apps/create">Create an App</a>-->
-<li *ngFor="let game of games" (click)="onSelect(game)">
-  {{ game.home }} vs {{ game.away }}
-</li>
+<div class="current-games">
+  <h3>Current NCAAF Games</h3>
+  <!--<a routerLink="/apps/create">Create an App</a>-->
+  <li class="games" *ngFor="let game of games" (click)="onSelect(game)">
+    <span>{{ game.home }} vs {{ game.away }}</span>
+  </li>
+</div>
 
-<h3>Completed NCAAF Games</h3>
-<li *ngFor="let game of completedGames" (click)="onSelect(game)">
-  {{ game.home }} vs {{ game.away }}
-</li>
-
+<div class="completed-games">
+  <h3>Completed NCAAF Games</h3>
+  <li class="games" *ngFor="let game of completedGames" (click)="onSelect(game)">
+    <span>{{ game.home }} vs {{ game.away }}</span>
+  </li>
+</div>
