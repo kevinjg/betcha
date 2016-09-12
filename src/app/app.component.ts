@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 import { AuthService } from './shared/auth.service';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'hack-app',
@@ -9,27 +10,12 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
   styleUrls: [require('./app.component.scss').toString()]
 })
 export class AppComponent {
+  // private socket;
+
   constructor(private auth: AuthService) {
-    // this.showSuccess();
+    // this.socket = io('http://localhost:3000');
+    // this.socket.on('update', function (data) {
+    //   alert(data);
+    // }.bind(this));
   }
-
-  // showSuccess() {
-  //   this.toastr.success('Challenge sent!', 'Success!');
-  // }
-
-  // showError() {
-  //   this.toastr.error('This is not good!', 'Oops!');
-  // }
-
-  // showWarning() {
-  //   this.toastr.warning('You are being warned.', 'Alert!');
-  // }
-
-  // showInfo() {
-  //   this.toastr.info('Just some information for you.');
-  // }
-
-  // showCustom() {
-  //   this.toastr.custom('<span style="color: red">Message in red.</span>', null, { enableHTML: true });
-  // }
 }
